@@ -16,12 +16,21 @@ Window {
     }
 	
 	Button {
+		id: myButton
 		text: "Ok"
 		onClicked: {
-			textLabel.text += "!"
+			textLabel.text += myTextField.text
 		}
 		anchors.top: textLabel.bottom
 		anchors.horizontalCenter: textLabel.horizontalCenter
+	}
+	
+	TextField {
+	    id: myTextField
+	    text: "!"
+        
+	    anchors.top: myButton.bottom
+		anchors.horizontalCenter: myButton.horizontalCenter
 	}
 
     Component.onCompleted:
